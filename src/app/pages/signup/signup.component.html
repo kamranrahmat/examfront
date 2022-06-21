@@ -7,36 +7,36 @@
                 </div>
                 <h1 class="text-center">Register Here</h1>
 
-                <form>
+                <form (ngSubmit)="formSubmit()">
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Username</mat-label>
-                        <input type="text" matInput placeholder="Enter Here">
+                        <input name="username" [(ngModel)]="user.username" type="text" matInput placeholder="Enter Here">
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Password</mat-label>
-                        <input type="text" matInput placeholder="Enter Here">
+                        <input name="password" [(ngModel)]="user.password"  type="text" matInput placeholder="Enter Here">
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput placeholder="Enter Here">
+                        <input name="email" [(ngModel)]="user.email" type="email" matInput placeholder="Enter Here">
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>First Name</mat-label>
-                        <input type="text" matInput placeholder="Enter Here">
+                        <input name="firstName" [(ngModel)]="user.firstName" type="text" matInput placeholder="Enter Here">
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Last Name</mat-label>
-                        <input type="text" matInput placeholder="Enter Here">
+                        <input name="lastName" [(ngModel)]="user.lastName" type="text" matInput placeholder="Enter Here">
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Phone</mat-label>
-                        <input type="number" matInput placeholder="Enter Here">
+                        <input name="phone" [(ngModel)]="user.phone" type="number" matInput placeholder="Enter Here">
                     </mat-form-field>
 
                     <div class="container text-center">
