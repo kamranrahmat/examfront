@@ -16,14 +16,18 @@ import {MatInputModule} from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import {MatCardModule} from '@angular/material/card'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     MatInputModule,
     MatProgressSpinnerModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [MatSnackBarModule],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt15">
+            <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <div class="container text-center">
+                    <img src="../../../assets/logo.png" />
+                </div>
+                <h1 class="text-center mt15">Login Here!!</h1>
+                <form>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input name="username"  type="text" matInput placeholder="Enter Here" required>
+                        <mat-hint>valid username</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input name="password"  type="password" matInput placeholder="Enter Here" required>
+                    </mat-form-field>
+                    
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Login</button>
+                        <button class="ml15" type="reset" mat-raised-button color="accent">Reset</button>
+                    </div>
+                </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
