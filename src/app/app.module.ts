@@ -19,6 +19,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import {MatCardModule} from '@angular/material/card'
+import { AuthInterceptorProviders } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import {MatCardModule} from '@angular/material/card'
     HttpClientModule,
     MatCardModule
   ],
-  providers: [MatSnackBarModule],
+  providers: [MatSnackBarModule,AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

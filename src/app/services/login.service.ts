@@ -14,6 +14,10 @@ export class LoginService {
    return this.http.post(`${baseUrl}/generate-token`,loginData);
   }
 
+  public getCurrentUser(){
+    return this.http.get(`${baseUrl}/current-user`);
+  }
+
   public loginUser(token:any){
     localStorage.setItem("token",token);
     return true;
