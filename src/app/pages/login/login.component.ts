@@ -41,10 +41,12 @@ export class LoginComponent implements OnInit {
             if(this.loginService.getUserRole()=='ADMIN'){
               //window.location.href='/admin'//magar windows.location sare component reload kr de ga yahan router b use ho sakta tha
               this.router.navigate(['admin']);
+              this.loginService.loginStatusSubject.next(true);
             }
             else if(this.loginService.getUserRole()=='NORMAL'){
-              window.location.href='/user-dashboard'//magar windows.location sare component reload kr de ga yahan router b use ho sakta tha
+              //window.location.href='/user-dashboard'//magar windows.location sare component reload kr de ga yahan router b use ho sakta tha
               this.router.navigate(['user-dashboard'])
+              this.loginService.loginStatusSubject.next(true);
             }
             else{
               this.loginService.logout();
