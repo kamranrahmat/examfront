@@ -1,0 +1,6 @@
+.profile-image{
+    max-width: 1500px;
+    max-height: 1500px;
+    border: 2px solid #ff4081;
+    border-radius: 50%;
+}
