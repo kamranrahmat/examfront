@@ -1,3 +1,4 @@
+import { LoginService } from 'src/app/services/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
+  user:any=null;
+  constructor(private login:LoginService) { }
 
   ngOnInit(): void {
+    this.user=this.login.getUser();
   }
 
 }
