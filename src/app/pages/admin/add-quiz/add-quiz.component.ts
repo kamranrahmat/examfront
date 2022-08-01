@@ -38,5 +38,8 @@ export class AddQuizComponent implements OnInit {
       }
     )
   }
+  public addQuiz(){
+    
+  }
 
 }
