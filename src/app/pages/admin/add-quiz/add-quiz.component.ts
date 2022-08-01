@@ -1,4 +1,6 @@
+import { CategoryService } from './../../../services/category.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-quiz',
@@ -6,17 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-quiz.component.css']
 })
 export class AddQuizComponent implements OnInit {
-  categories=[{
-    cid:1,
-    title:'test'
-  },
-  {
-    cid:2,
-    title:'test2'
-  }];
-  constructor() { }
+  categories:any;
+  quizdata={
+    title:'',
+    description:'',
+    maxMarks:'',
+    active:true,
+    numberOfQuestions:'',
+    category:{
+      cid:null
+    }
+};
+  
+  constructor(private _category:CategoryService) { }
+
 
   ngOnInit(): void {
+    this.fetchCategories();
+
+  }
+  private fetchCategories(){
+    this._category.categories().subscribe(
+      (data:any)=>{
+        this.categories=data;
+        console.log(data)
+      },
+      (error)=>{
+        Swal.fire("Error !!",error,"error");
+      }
+    )
   }
 
 }
