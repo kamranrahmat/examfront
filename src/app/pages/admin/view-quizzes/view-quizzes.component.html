@@ -16,6 +16,7 @@
         <button mat-stroked-button color="accent" class="ml15">Questions: {{item.numberOfQuestions}}</button>
         <button mat-flat-button color="accent" class="ml15">Update</button>
         <button mat-flat-button color="accent" class="ml15">Attempts</button>
+        <button mat-flat-button color="warn" class="ml15" (click)="deleteQuiz(item.qId)">Delete</button>
 
     </mat-card-actions>
 </mat-card>

@@ -15,4 +15,7 @@ export class QuizService {
   public addQuiz(quiz:object){
     return this._http.post(`${baseUrl}/quiz/`,quiz);
   }
+  public dateleteQuiz(qId:number){
+    return this._http.delete(`${baseUrl}/quiz/${qId}`);
+  }
 }
