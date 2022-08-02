@@ -18,4 +18,10 @@ export class QuizService {
   public dateleteQuiz(qId:number){
     return this._http.delete(`${baseUrl}/quiz/${qId}`);
   }
+  public getSingleQuiz(qId:number){
+    return this._http.get(`${baseUrl}/quiz/${qId}`);
+  }
+  public updateQuiz(quiz:object){
+    return this._http.put(`${baseUrl}/quiz/`,quiz);
+  }
 }
