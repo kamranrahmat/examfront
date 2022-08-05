@@ -82,7 +82,10 @@ const routes: Routes = [
 {
   path:'user-dashboard',
   component:UserDashboardComponent,
-  pathMatch:'full',
+  // pathMatch:'full',
+  children:[
+    
+  ],
   canActivate:[NormalGuard]
 }
 
