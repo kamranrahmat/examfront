@@ -1,0 +1,25 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <h2>Available Quizzes   </h2>
+        <div class="row mt15" *ngIf="quizzes">
+            <div class="col-md-4" *ngFor="let q of quizzes">
+
+                <mat-card>
+                    <mat-card-header>
+                        <div mat-card-avatar class="card-header-image"></div>
+                        <mat-card-title>
+                            {{q.title}}
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            {{q.category.title}}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="truncate">{{q.description}}</p>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>

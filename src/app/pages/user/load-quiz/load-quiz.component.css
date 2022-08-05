@@ -1,0 +1,11 @@
+.truncate{
+    display: inline;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-header-image{
+    background-image: url('/assets/user exam.png');
+    background-size: cover;
+}
