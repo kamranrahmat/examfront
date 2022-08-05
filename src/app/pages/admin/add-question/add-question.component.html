@@ -9,7 +9,7 @@
                 </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                <form class="mt15">
+                <form class="mt15" (submit)="submitform()">
                     <mat-form-field class="w100">
                         <mat-label>Write Question Content</mat-label>
                         <textarea [(ngModel)]="question.content" name="content" rows="5" matInput placeholder="Enter Here"></textarea>
@@ -45,7 +45,7 @@
                     </div>
                     <mat-form-field class="w100">
                         <mat-label>Select Answer</mat-label>
-                        <mat-select [(ngModel)]="question.answer">
+                        <mat-select [(ngModel)]="question.answer" name="answer">
                             <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</mat-option>
                             <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
                             <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
@@ -53,7 +53,7 @@
                         </mat-select>
                     </mat-form-field>
                     <div class="container text-center">
-                        <button mat-raised-button color="accent">Add</button>
+                        <button mat-raised-button color="accent" type="submit">Add</button>
                     </div>
                 </form>
             </mat-card-content>
@@ -61,3 +61,4 @@
     </div>
 </div>
 </div>
+{{question |json}}
