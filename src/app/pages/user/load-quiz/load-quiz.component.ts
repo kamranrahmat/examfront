@@ -27,15 +27,15 @@ export class LoadQuizComponent implements OnInit {
       var category_id:number= params['cat_id'];
       
       if (category_id == 0) {
-        this.loadallQuiz();
+        this.loadAllActiveQuiz();
       } else {
-        this.loadQuizOfCategory(category_id);
+        this.loadActiveQuizOfCategory(category_id);
       }
 
     })
   }
-  public loadallQuiz(){
-    this._quiz.getAllQuizzes().subscribe(
+  public loadAllActiveQuiz(){
+    this._quiz.getAllActiveQuizzes().subscribe(
       (data:any)=>{
         this.quizzes=data;
       },
@@ -46,8 +46,8 @@ export class LoadQuizComponent implements OnInit {
     );
   }
 
-  public loadQuizOfCategory(categoryId:number){
-    this._quiz.getQuizzesOfCategory(categoryId).subscribe(
+  public loadActiveQuizOfCategory(categoryId:number){
+    this._quiz.getActiveQuizzesOfCategory(categoryId).subscribe(
       (data:any)=>{
         this.quizzes=data;
       },
