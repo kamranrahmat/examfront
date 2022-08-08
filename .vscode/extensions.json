@@ -5,6 +5,10 @@
     "zignd.html-css-class-completion",
     "hardikpthv.angularmaterial",
     "johnpapa.angular2",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "steoates.autoimport",
+    "johnpapa.angular-essentials",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode"
   ]
 }
