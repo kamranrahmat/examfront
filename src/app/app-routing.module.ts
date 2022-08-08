@@ -1,3 +1,4 @@
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { Component, NgModule } from '@angular/core';
@@ -88,6 +89,10 @@ const routes: Routes = [
     {
       path:':cat_id',
       component:LoadQuizComponent
+    },
+    {
+      path:'instructions/:qId',
+      component:InstructionsComponent
     }
   ],
   canActivate:[NormalGuard]
