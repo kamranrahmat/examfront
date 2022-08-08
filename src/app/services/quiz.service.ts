@@ -24,4 +24,7 @@ export class QuizService {
   public updateQuiz(quiz:object){
     return this._http.put(`${baseUrl}/quiz/`,quiz);
   }
+  public getQuizzesOfCategory(categoryId:number){
+   return this._http.get(`${baseUrl}/quiz/category/${categoryId}`);
+  }
 }
