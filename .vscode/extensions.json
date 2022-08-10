@@ -9,6 +9,7 @@
     "steoates.autoimport",
     "johnpapa.angular-essentials",
     "editorconfig.editorconfig",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "1tontech.angular-material"
   ]
 }
