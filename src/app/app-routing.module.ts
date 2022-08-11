@@ -1,7 +1,7 @@
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
@@ -18,6 +18,7 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { QuizStartComponent } from './pages/user/quiz-start/quiz-start.component';
 
 const routes: Routes = [
 {
@@ -94,9 +95,17 @@ const routes: Routes = [
       path:'instructions/:qId',
       component:InstructionsComponent
     }
+
   ],
   canActivate:[NormalGuard]
+},
+
+{
+    path:'quiz-start/:qId',
+    component:QuizStartComponent,
+    canActivate:[NormalGuard]
 }
+
 
 ];
 
