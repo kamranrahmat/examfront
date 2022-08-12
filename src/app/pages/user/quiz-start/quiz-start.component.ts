@@ -28,6 +28,8 @@ export class QuizStartComponent implements OnInit {
   public loadQuestion(quizId:number){
     this.questionService.getAllQuestionOfQuizForExam(quizId).subscribe(
       (data:any)=>{
+        console.log("questions are")
+        console.log(data);
         this.questions=data;
         console.log(this.questions);
       },
