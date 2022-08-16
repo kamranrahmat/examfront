@@ -31,6 +31,9 @@ export class QuizStartComponent implements OnInit {
         console.log("questions are")
         console.log(data);
         this.questions=data;
+        this.questions.forEach((q:any)=>{
+          q['givenAnswer']='';
+        })
         console.log(this.questions);
       },
       (error)=>{
