@@ -12,6 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class QuizStartComponent implements OnInit {
  qId:any
+ makrsGot=0;
+ correctAnswer=0;
+ attempted=0;
+ isSubmit=false;
 
  questions:any;
   constructor(
@@ -32,7 +36,7 @@ export class QuizStartComponent implements OnInit {
         console.log(data);
         this.questions=data;
         this.questions.forEach((q:any)=>{
-          q['givenAnswer']='';
+          q['givenAnswer']='  ';
         })
         console.log(this.questions);
       },
@@ -46,6 +50,30 @@ public preventBackButton(){
   this.locationSt.onPopState(()=>{
     history.pushState(null,'',location.href);
   })
+}
 
+submitQuiz(){
+  Swal.fire({
+    title: 'Do you want to submit the quiz?',
+    showCancelButton: true,
+    confirmButtonText: 'Submit',
+    denyButtonText:'Dont Save',
+    icon:'info'
+  }).then((e)=>{
+    if(e.isConfirmed){
+      this.isSubmit=true;
+      this.questions.forEach((q:any)=>{
+        if(q.givenAnswer==q.answer){
+          this.correctAnswer++;
+          let markSingle=q.quiz.maxMarks / this.questions.length;
+          this.makrsGot +=markSingle;
+        }
+
+        if(q.givenAnswer.trim()!=''){
+          this.attempted++;
+        }
+      });
+    }
+  })
 }
 }
