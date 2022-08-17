@@ -16,6 +16,7 @@ export class QuizStartComponent implements OnInit {
  correctAnswer=0;
  attempted=0;
  isSubmit=false;
+ timer:any;
 
  questions:any;
   constructor(
@@ -35,10 +36,13 @@ export class QuizStartComponent implements OnInit {
         console.log("questions are")
         console.log(data);
         this.questions=data;
+        this.timer=this.questions.length*2*60;
+
         this.questions.forEach((q:any)=>{
           q['givenAnswer']='  ';
         })
         console.log(this.questions);
+        this.startTimer();
       },
       (error)=>{
         Swal.fire('Error in loading question',error,'error');
@@ -61,19 +65,38 @@ submitQuiz(){
     icon:'info'
   }).then((e)=>{
     if(e.isConfirmed){
-      this.isSubmit=true;
-      this.questions.forEach((q:any)=>{
-        if(q.givenAnswer==q.answer){
-          this.correctAnswer++;
-          let markSingle=q.quiz.maxMarks / this.questions.length;
-          this.makrsGot +=markSingle;
-        }
-
-        if(q.givenAnswer.trim()!=''){
-          this.attempted++;
-        }
-      });
+      this.evalQuiz();
     }
   })
+}
+startTimer(){
+  let t:any=window.setInterval(()=>{
+    if(this.timer<=0){
+      this.evalQuiz();
+      clearInterval(t);
+    }
+    else{
+      this.timer--;
+    }
+  },1000);
+}
+getFormatedTime(){
+  let mm=Math.floor(this.timer/60);
+  let ss=this.timer-mm *60;
+  return `${mm} min : ${ss} sec`;
+}
+evalQuiz(){
+  this.isSubmit=true;
+  this.questions.forEach((q:any)=>{
+    if(q.givenAnswer==q.answer){
+      this.correctAnswer++;
+      let markSingle=q.quiz.maxMarks / this.questions.length;
+      this.makrsGot +=markSingle;
+    }
+
+    if(q.givenAnswer.trim()!=''){
+      this.attempted++;
+    }
+  });
 }
 }

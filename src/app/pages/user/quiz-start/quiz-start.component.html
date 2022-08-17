@@ -47,6 +47,25 @@
       </div>
       <div class="col-md-2">
         <!-- progress timer etc -->
+        <mat-card style="margin-top: 70px">
+          <mat-card-header>
+            <mat-card-title>
+              Progress
+            </mat-card-title>
+            <mat-card-subtitle>
+              Quiz Will automatically submited when timer reaches <b>0:0</b>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <h1 class="text-center">{{getFormatedTime()}}</h1>
+            <mat-spinner
+            mode="determinate"
+            color="accent"
+            style="margin:auto"
+            [value]="(timer/(this.questions.length*2*60))*100">
+          </mat-spinner>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
   </div>
@@ -63,11 +82,16 @@
       Quiz Result
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="text-center">
     <h1>Marks Got : {{makrsGot}}</h1>
     <h1>Correct Answer : {{correctAnswer}}</h1>
     <h1>Question attempted : {{attempted}}</h1>
   </mat-card-content>
+  <mat-card-actions class="text-center">
+    <button mat-button color="primary">Print</button>
+    <button mat-button color="accent" [routerLink]="'/user-dashboard/0'">Home</button>
+
+  </mat-card-actions>
 </mat-card>
 
 </div>
